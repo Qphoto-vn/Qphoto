@@ -1,163 +1,185 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Q Photo - Phóng Sự Cưới</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0b0b0b;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
-    header {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero.jpg') center/cover no-repeat;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    header p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 26px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      background: #ffffff;
-      color: #000;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: 2px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .price-box {
-      background: #111;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 30px;
-    }
-    .price-box h3 {
-      margin-top: 0;
-      color: #fff;
-    }
-    .price-box ul {
-      list-style: none;
-      padding: 0;
-    }
-    .price-box li {
-      padding: 6px 0;
-      border-bottom: 1px solid #222;
-    }
-    footer {
-      background: #000;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    footer p {
-      margin: 8px 0;
-      color: #aaa;
-    }
-    .zalo {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #0068ff;
-      color: #fff;
-      padding: 14px 20px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Q Photo – Phóng Sự Cưới</title>
+
+<style>
+body{
+    margin:0;
+    font-family:"Helvetica Neue",Arial,sans-serif;
+    color:#f2f2f2;
+    background:#0a0a0a;
+    overflow-x:hidden;
+}
+
+/* NỀN MỜ KHÓI */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.06), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(212,175,109,0.08), transparent 45%),
+        linear-gradient(180deg,#0a0a0a,#141414,#0a0a0a);
+    filter: blur(18px);
+    z-index:-1;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:40px 20px 20px;
+}
+
+.logo img{
+    width:140px;
+    margin-bottom:18px;
+}
+
+.top-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+}
+
+.top-buttons a{
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    color:#d4af6d;
+    border:1px solid rgba(212,175,109,0.5);
+    background:rgba(255,255,255,0.06);
+    backdrop-filter: blur(6px);
+}
+
+/* TITLES */
+h1{
+    text-align:center;
+    font-size:38px;
+    letter-spacing:3px;
+    margin:30px 0 6px;
+}
+
+h2{
+    text-align:center;
+    font-size:20px;
+    font-weight:300;
+    color:#d4af6d;
+    margin-bottom:60px;
+}
+
+/* CONTENT */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px 60px;
+}
+
+/* GALLERY */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:
+        0 18px 40px rgba(0,0,0,0.85),
+        0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* PRICE */
+.price{
+    margin-top:80px;
+    background:rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:22px;
+    padding:40px;
+}
+
+.price h3{
+    color:#d4af6d;
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.price p{
+    line-height:1.9;
+    font-size:16px;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    margin-top:60px;
+}
+
+.contact a{
+    display:inline-block;
+    margin:12px;
+    padding:16px 36px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
+    background:linear-gradient(135deg,#d4af6d,#b8944b);
+    color:#000;
+    box-shadow:0 12px 30px rgba(0,0,0,0.6);
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>Q PHOTO – PHÓNG SỰ CƯỚI</h1>
-  <p>Lưu giữ khoảnh khắc thật – Cảm xúc trọn đời</p>
-  <a class="btn" href="tel:0867898351">📞 GỌI NGAY</a>
-  <a class="btn" href="https://zalo.me/0867898351">💬 NHẮN ZALO</a>
-</header>
+<div class="header">
+    <div class="logo">
+        <img src="logo.png" alt="Q Photo">
+    </div>
 
-<section>
-  <h2>ALBUM PHÓNG SỰ</h2>
-  <div class="gallery">
+    <div class="top-buttons">
+        <a href="tel:0867898351">📞 Gọi</a>
+        <a href="https://zalo.me/0867898351">💬 Zalo</a>
+        <a href="https://instagram.com/nm_quannnn">📷 Instagram</a>
+        <a href="https://tiktok.com/@minhquann.99">🎵 TikTok</a>
+    </div>
+</div>
+
+<h1>Q PHOTO</h1>
+<h2>PHÓNG SỰ CƯỚI</h2>
+
+<div class="container">
+
+<div class="gallery">
     <img src="img1.jpg">
     <img src="img2.jpg">
     <img src="img3.jpg">
     <img src="img4.jpg">
     <img src="img5.jpg">
-  </div>
-</section>
+</div>
 
-<section>
-  <h2>BẢNG GIÁ DỊCH VỤ</h2>
+<div class="price">
+    <h3>BẢNG GIÁ DỊCH VỤ</h3>
+    <p>
+        • Phóng sự cưới trọn gói<br>
+        • Chụp lễ – tiệc – ngày cưới<br>
+        • Ekip chuyên nghiệp – thiết bị cao cấp<br>
+        • Bảng giá chi tiết vui lòng liên hệ
+    </p>
+</div>
 
-  <div class="price-box">
-    <h3>PHÓNG SỰ ẢNH</h3>
-    <ul>
-      <li>Phóng sự 1 máy – <b>4.000.000đ</b></li>
-      <li>VIP – <b>2.790.000đ</b></li>
-      <li>VIP 1 – <b>3.000.000đ</b></li>
-      <li>VIP 2 – <b>4.390.000đ</b></li>
-      <li>VIP PRO – <b>6.000.000đ</b></li>
-    </ul>
-  </div>
+<div class="contact">
+    <a href="tel:0867898351">📞 GỌI NGAY</a>
+    <a href="https://zalo.me/0867898351">💬 ZALO</a>
+</div>
 
-  <div class="price-box">
-    <h3>QUAY VIDEO</h3>
-    <ul>
-      <li>Quay truyền thống – <b>3.790.000đ</b></li>
-      <li>Quay phóng sự – <b>6.390.000đ</b></li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <h2>LIÊN HỆ</h2>
-  <p>📞 08.6789.8351 – 076.8888.740</p>
-  <p>📷 Instagram: nm_quannnn</p>
-  <p>🎵 TikTok: @minhquann.99</p>
-</section>
-
-<footer>
-  <p>© Q Photo – Phóng Sự Cưới</p>
-  <p>Website: Qphoto.vn</p>
-</footer>
-
-<a class="zalo" href="https://zalo.me/0867898351">ZALO</a>
+</div>
 
 </body>
 </html>

@@ -5,16 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Q PHOTO – Phóng Sự Cưới</title>
 <style>
-/* ==== BODY ==== */
 body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #f2f2f2;
-    background: #1a1a1a; /* xám khói sang trọng */
+    background: #1a1a1a;
     overflow-x: hidden;
 }
 
-/* Nền khói nhẹ */
+/* Nền khói sang trọng */
 body::before {
     content: "";
     position: fixed;
@@ -27,28 +26,35 @@ body::before {
     z-index: -1;
 }
 
-/* ==== HEADER ==== */
+/* HEADER */
 .header {
     text-align: center;
-    padding: 30px 20px 10px;
+    padding: 25px 20px 10px;
     position: relative;
     z-index: 10;
 }
 
 /* Logo nhỏ gọn */
 .logo img {
-    width: 60px;
+    width: 40px;  /* logo nhỏ hơn */
     height: auto;
     display: block;
     margin: 0 auto 12px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border-radius: 50%; /* tròn đẹp */
+    border: 2px solid #d4af6d;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     position: relative;
     z-index: 11;
     object-fit: contain;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Top Buttons (liên hệ nhanh) */
+.logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(212,175,109,0.8);
+}
+
+/* Nút liên hệ */
 .top-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -62,49 +68,31 @@ body::before {
 
 .top-buttons a {
     padding: 10px 20px;
-    border-radius: 30px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
-    border: 1px solid rgba(212,175,109,0.5);
-    background: linear-gradient(135deg, #d4af6d, #b8944b);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    background: linear-gradient(135deg,#d4af6d,#b8944b);
+    border: 1px solid rgba(212,175,109,0.6);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
 }
 
 .top-buttons a:hover {
-    background: linear-gradient(135deg, #b8944b, #d4af6d);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+    background: linear-gradient(135deg,#b8944b,#d4af6d);
 }
 
-/* ==== TITLES ==== */
-h1 {
-    text-align: center;
-    font-size: 32px;
-    letter-spacing: 2px;
-    margin: 10px 0 6px;
-}
+/* TITLES */
+h1 { text-align:center; font-size:32px; margin:10px 0 6px; letter-spacing:2px; }
+h2 { text-align:center; font-size:18px; font-weight:300; color:#d4af6d; margin-bottom:50px; }
 
-h2 {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 300;
-    color: #d4af6d;
-    margin-bottom: 50px;
-}
+/* CONTAINER */
+.container { max-width:1200px; margin:auto; padding:0 20px 60px; position: relative; z-index:2; }
 
-/* ==== CONTAINER ==== */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px 60px;
-    position: relative;
-    z-index: 2;
-}
-
-/* ==== GALLERY 6 ẢNH CÙNG KÍCH THƯỚC ==== */
+/* GALLERY 6 ảnh cùng kích thước */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
@@ -114,8 +102,8 @@ h2 {
 
 .gallery img {
     width: 100%;
-    height: 150px;       /* chiều cao cố định */
-    object-fit: cover;   /* giữ tỉ lệ, cắt phần thừa */
+    height: 150px;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     transition: transform 0.3s, box-shadow 0.3s;
@@ -126,7 +114,7 @@ h2 {
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
-/* ==== PRICE ==== */
+/* BẢNG GIÁ */
 .price {
     margin-top: 20px;
     background: rgba(255,255,255,0.04);
@@ -137,61 +125,45 @@ h2 {
     text-align: center;
 }
 
-.price h3 {
-    color: #d4af6d;
-    margin-bottom: 18px;
-    font-size: 22px;
-}
+.price h3 { color:#d4af6d; margin-bottom:18px; font-size:22px; }
+.price p { line-height:1.8; font-size:15px; }
 
-.price p {
-    line-height: 1.8;
-    font-size: 15px;
-}
-
-/* ==== CONTACT ==== */
-.contact {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 16px;
-}
-
+/* THÔNG TIN LIÊN HỆ */
+.contact { text-align:center; margin-top:30px; font-size:16px; }
 .contact a, .contact span {
-    display: inline-block;
-    margin: 6px 12px;
-    padding: 10px 24px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
+    display:inline-block;
+    margin:6px 12px;
+    padding:10px 24px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:bold;
     background: linear-gradient(135deg,#d4af6d,#b8944b);
-    color: #000;
+    color:#000;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
     transition: all 0.3s ease;
 }
 
 .contact a:hover {
-    background: linear-gradient(135deg,#b8944b,#d4af6d);
     transform: translateY(-2px);
+    background: linear-gradient(135deg,#b8944b,#d4af6d);
 }
 
-/* ==== RESPONSIVE ==== */
-@media(max-width: 600px){
-    h1 { font-size: 24px; }
-    h2 { font-size: 14px; margin-bottom: 30px; }
-    .container { padding: 0 12px 40px; }
-    .top-buttons a, .contact a, .contact span { padding: 8px 16px; font-size: 13px; }
-    .gallery img { height: 120px; }
+/* RESPONSIVE */
+@media(max-width:600px){
+    h1 { font-size:24px; }
+    h2 { font-size:14px; margin-bottom:30px; }
+    .container { padding:0 12px 40px; }
+    .top-buttons a, .contact a, .contact span { padding:8px 16px; font-size:13px; }
+    .gallery img { height:120px; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER + NÚT LIÊN HỆ -->
 <div class="header">
-    <div class="logo.png">
-        <img src="logo.png" alt="Q PHOTO">
+    <div class="logo">
+        <img src="logo.jpg" alt="Q PHOTO">
     </div>
-
     <div class="top-buttons">
         <a href="tel:0768888740">📞 076.8888.740</a>
         <a href="tel:0867898351">📞 08.6789.8351</a>
@@ -201,14 +173,10 @@ h2 {
     </div>
 </div>
 
-<!-- TITLES -->
 <h1>Q - PHOTO</h1>
 <h2>📸 PHÓNG SỰ CƯỚI 📸</h2>
 
-<!-- NỘI DUNG -->
 <div class="container">
-
-    <!-- Gallery 6 ảnh -->
     <div class="gallery">
         <img src="img1.jpg" alt="">
         <img src="img2.jpg" alt="">
@@ -218,7 +186,6 @@ h2 {
         <img src="img6.jpg" alt="">
     </div>
 
-    <!-- Bảng giá -->
     <div class="price">
         <h3>BẢNG GIÁ DỊCH VỤ</h3>
         <p>
@@ -229,13 +196,10 @@ h2 {
         </p>
     </div>
 
-    <!-- Thông tin liên hệ -->
     <div class="contact">
         <span>📞 076.8888.740</span>
         <span>📞 08.6789.8351</span>
     </div>
-
 </div>
-
 </body>
 </html>

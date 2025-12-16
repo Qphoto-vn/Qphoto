@@ -37,29 +37,48 @@ body::before{
 }
 
 /* Logo */
+/* Logo nhỏ gọn */
 .logo img {
-    width: 100px;       /* chiều rộng mong muốn */
-    height: auto;       /* giữ tỉ lệ gốc */
+    width: 60px;       /* logo nhỏ gọn */
+    height: 80px;      /* giữ tỉ lệ */
     display: block;
-    margin: 0 auto 18px;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    margin: 0 auto 12px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     position: relative;
     z-index: 11;
-    object-fit: contain; /* đảm bảo ảnh không bị méo */
+    object-fit: contain;
 }
 
-/* Top Buttons */
+/* Top Buttons (liên hệ nhanh) */
 .top-buttons {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: sticky;
     top: 10px;
-    z-index: 12; /* đảm bảo luôn nổi trên nền */
+    z-index: 12;
 }
+
+.top-buttons a {
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    border: 1px solid rgba(212,175,109,0.5);
+    background: linear-gradient(135deg, #d4af6d, #b8944b);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.top-buttons a:hover {
+    background: linear-gradient(135deg, #b8944b, #d4af6d);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6)
 
 /* TITLES */
 h1{

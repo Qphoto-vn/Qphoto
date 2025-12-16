@@ -37,8 +37,8 @@ body::before {
 
 /* Logo nhỏ gọn */
 .logo img {
-    width: 10px;
-    height: 20px;
+    width: 60px;
+    height: auto;
     display: block;
     margin: 0 auto 12px;
     border-radius: 8px;
@@ -104,24 +104,26 @@ h2 {
     z-index: 2;
 }
 
-/* ==== GALLERY ==== */
+/* ==== GALLERY 6 ẢNH CÙNG KÍCH THƯỚC ==== */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(120px,1fr));
+    gap: 12px;
     margin-bottom: 50px;
 }
 
 .gallery img {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
-    transition: transform 0.4s, box-shadow 0.4s;
+    height: 150px;       /* chiều cao cố định */
+    object-fit: cover;   /* giữ tỉ lệ, cắt phần thừa */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 0 1px rgba(212,175,109,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
 }
 
 /* ==== PRICE ==== */
@@ -177,6 +179,7 @@ h2 {
     h2 { font-size: 14px; margin-bottom: 30px; }
     .container { padding: 0 12px 40px; }
     .top-buttons a, .contact a, .contact span { padding: 8px 16px; font-size: 13px; }
+    .gallery img { height: 120px; }
 }
 </style>
 </head>
@@ -202,9 +205,7 @@ h2 {
 <h1>Q - PHOTO</h1>
 <h2>📸 PHÓNG SỰ CƯỚI 📸</h2>
 
-   <h3>--- BẢNG GIÁ DỊCH VỤ ---</h3>
-
-<!-- NỘI DUNG CHÍNH -->
+<!-- NỘI DUNG -->
 <div class="container">
 
     <!-- Gallery 6 ảnh -->
@@ -219,8 +220,7 @@ h2 {
 
     <!-- Bảng giá -->
     <div class="price">
-     
-        
+        <h3>BẢNG GIÁ DỊCH VỤ</h3>
         <p>
             • Phóng sự cưới - trọn gói<br>
             • Chụp lễ – tiệc – ngày cưới - ngoại cảnh<br>

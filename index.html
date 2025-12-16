@@ -28,34 +28,35 @@ body::before{
     z-index:-1;
 }
 
-/* HEADER */
-.header{
-    text-align:center;
-    padding:40px 20px 20px;
+/* /* ==== HEADER ==== */
+.header {
+    text-align: center;
+    padding: 40px 20px 20px;
+    position: relative;
+    z-index: 10; /* tăng z-index để nổi lên trên nền */
 }
 
-.logo img{
-    width:140px;
-    margin-bottom:18px;
+/* Logo */
+.logo img {
+    width: 140px;
+    display: block;
+    margin: 0 auto 18px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 11; /* cao hơn ::before nền */
 }
 
-.top-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    justify-content:center;
-}
-
-.top-buttons a{
-    padding:10px 22px;
-    border-radius:30px;
-    text-decoration:none;
-    font-size:14px;
-    font-weight:bold;
-    color:#d4af6d;
-    border:1px solid rgba(212,175,109,0.5);
-    background:rgba(255,255,255,0.06);
-    backdrop-filter: blur(6px);
+/* Top Buttons */
+.top-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: sticky;
+    top: 10px;
+    z-index: 12; /* đảm bảo luôn nổi trên nền */
 }
 
 /* TITLES */

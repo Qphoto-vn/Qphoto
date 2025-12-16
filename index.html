@@ -10,21 +10,29 @@ body {
     margin: 0;
     font-family: "Helvetica Neue", Arial, sans-serif;
     color: #f2f2f2;
-    background: #1a1a1a; /* xám khói sang trọng */
+    background: #0a0a0a;
     overflow-x: hidden;
 }
 
-/* Nền khói nhẹ */
+/* ==== NỀN KHÓI + ẢNH CHÌM ==== */
 body::before {
-    content: "";
+    content:"";
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.03), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.02), transparent 45%),
-        linear-gradient(180deg,#1a1a1a,#262626,#1a1a1a);
-    filter: blur(15px);
+        url('background.jpg') center/cover no-repeat,
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.05), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(200,200,200,0.08), transparent 45%),
+        linear-gradient(180deg,#0a0a0a,#141414,#0a0a0a);
+    filter: blur(18px);
     z-index: -1;
+    animation: floatBackground 30s linear infinite;
+}
+
+@keyframes floatBackground {
+    0% { background-position: 0 0, 0 0, 0 0, 0 0; }
+    50% { background-position: 20px 20px, 50px 50px, -50px -30px, 0 0; }
+    100% { background-position: 0 0, 0 0, 0 0, 0 0; }
 }
 
 /* ==== HEADER ==== */
@@ -37,8 +45,8 @@ body::before {
 
 /* Logo nhỏ gọn */
 .logo img {
-    width: 60px;
-    height: auto;
+    width: 60px;       /* logo nhỏ gọn */
+    height: auto;      /* giữ tỉ lệ */
     display: block;
     margin: 0 auto 12px;
     border-radius: 8px;
@@ -115,13 +123,17 @@ h2 {
 .gallery img {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.08);
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.7),
+        0 0 0 1px rgba(255,255,255,0.08);
     transition: transform 0.4s, box-shadow 0.4s;
 }
 
 .gallery img:hover {
     transform: scale(1.05);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 0 1px rgba(212,175,109,0.2);
+    box-shadow:
+        0 25px 50px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(212,175,109,0.2);
 }
 
 /* ==== PRICE ==== */
@@ -150,13 +162,12 @@ h2 {
 .contact {
     text-align: center;
     margin-top: 30px;
-    font-size: 16px;
 }
 
-.contact a, .contact span {
+.contact a {
     display: inline-block;
-    margin: 6px 12px;
-    padding: 10px 24px;
+    margin: 10px;
+    padding: 14px 32px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
@@ -176,22 +187,22 @@ h2 {
     h1 { font-size: 24px; }
     h2 { font-size: 14px; margin-bottom: 30px; }
     .container { padding: 0 12px 40px; }
-    .top-buttons a, .contact a, .contact span { padding: 8px 16px; font-size: 13px; }
+    .top-buttons a { padding: 8px 16px; font-size: 13px; }
+    .contact a { padding: 12px 28px; font-size: 13px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER + NÚT LIÊN HỆ -->
+<!-- HEADER + LIÊN HỆ -->
 <div class="header">
-    <div class="logo.png">
-        <img src="logo.png" alt="Q PHOTO">
+    <div class="logo">
+        <img src="logo.jpg" alt="Q PHOTO">
     </div>
 
     <div class="top-buttons">
-        <a href="tel:0768888740">📞 076.8888.740</a>
-        <a href="tel:0867898351">📞 08.6789.8351</a>
+        <a href="tel:0867898351">📞 Gọi</a>
         <a href="https://zalo.me/0867898351">💬 Zalo</a>
         <a href="https://instagram.com/nm_quannnn">📷 Instagram</a>
         <a href="https://tiktok.com/@minhquann.99">🎵 TikTok</a>
@@ -202,7 +213,7 @@ h2 {
 <h1>Q - PHOTO</h1>
 <h2>📸 PHÓNG SỰ CƯỚI 📸</h2>
 
-<!-- NỘI DUNG CHÍNH -->
+<!-- NỘI DUNG -->
 <div class="container">
 
     <!-- Gallery 6 ảnh -->
@@ -226,13 +237,12 @@ h2 {
         </p>
     </div>
 
-    <!-- Thông tin liên hệ -->
+    <!-- Nút liên hệ -->
     <div class="contact">
-        <span>📞 076.8888.740</span>
-        <span>📞 08.6789.8351</span>
+        <a href="tel:0867898351">📞 GỌI NGAY</a>
+        <a href="https://zalo.me/0867898351">💬 ZALO</a>
     </div>
 
 </div>
-
 </body>
 </html>
